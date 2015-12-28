@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "lib.h"
 
 
@@ -7,18 +8,24 @@ int main() {
     struct myauthor author1;
     struct mybook book1;
 
-    char temp_fn[20] = "alvaro";
-    char temp_ln[20] = "miranda";
+    struct word temp_fn;
+    struct word temp_ln;
+    struct word temp_title;
+    struct word temp_topic;
 
-    author1 = assign_author(temp_fn, temp_ln);
+    strcpy(temp_fn.word, "alvaro");
+    strcpy(temp_ln.word, "miranda");
 
-    char temp_title[50] = "y u no devops my title";
+    author1 = assign_author(&temp_fn, &temp_ln);
+
+    strcpy(temp_title.word, "y u no devops");
     long int temp_isbn = 123123123;
-    char temp_topic[20] = "devops";
 
-    book1 = assign_book(author1, temp_title, temp_isbn, temp_topic);
+    strcpy(temp_topic.word, "devops");
 
-    printf("Hello from cli %s %s\n", author1.firstname,author1.lastname);
-    printf("Author of %s\n", book1.title);
+    book1 = assign_book(author1, &temp_title, temp_isbn, &temp_topic);
+
+    printf("Hello from cli %s %s\n", author1.firstname->word,author1.lastname->word);
+    printf("Author of %s, category: %s\n", book1.title->word, book1.topic->word);
     return 0;
 }
