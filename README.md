@@ -51,7 +51,7 @@ Scanning dependencies of target c_bi_cli_lib
 [100%] Linking C executable c_bi_cli_lib
 [100%] Built target c_bi_cli_lib
 
-Alvaros-Mini:t kikitux$ ./c_bi_cli_lib 
+Alvaros-Mini:t kikitux$ ./cli 
 Hello from cli Alvaro
 Author of y u no devops, category: DevOps
 Want to quote this book? use:
